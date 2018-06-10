@@ -99,7 +99,7 @@ HTTP request sent, awaiting response... 400 ERROR - CALLBACK PARAMETERS ARE MISS
 $ rm db-dump.tgz
 ```
 
-Once the compressed file is ready, an HTTP callback request will be sent to ping the user. Parameters, like **?id=A1B2C3**, are optional, and can be used to identify the request.
+Once the compressed file is ready, an HTTP callback request will be sent to ping the client. Parameters, like **?id=A1B2C3**, are optional, and can be used to identify the request.
 
 ```
 $ wget -qO- "http://localhost:9006/tar?dir=../dir-1&name=db-dump.sql&host=localhost&port=9010&path=/ping?id=A1B2C3"
@@ -116,7 +116,7 @@ Check the server log file **src/server.log** to see that the ping-back has a res
 2018-06-10 23:59:34,876 - DEBUG - 127.0.0.1:45432 - Thread-7 - CALLBACK: 200 - OK: I know that the TARBALL has been created.
 ```
 
-The user then may ask for a directory listing and can download the file without any further compression.
+The client then may ask for a directory listing and can download the file without any further compression.
 
 ```
 $ wget -qO- "http://localhost:9006/list?dir=../dir-1&prefix=db-dump&suffix=tgz"
