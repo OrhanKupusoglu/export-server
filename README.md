@@ -1,6 +1,6 @@
 # Python 2.4 REST API
 
-In the Python world, to publish a directory's listing over the HTTP interface one does even not need a program.
+In the Python world, to publish a directory's listing over HTTP one does even not need a program.
 
 Here the contents of the working directory is listed on port 9008, the default port is 8000.
 
